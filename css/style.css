@@ -139,6 +139,11 @@ main {
     height: 150px;
     object-fit: cover;
 }
+.etc {
+    margin: 0 auto;
+    width: 75%;
+    text-align: right;
+}
 
 .feature {
     display: flex;
