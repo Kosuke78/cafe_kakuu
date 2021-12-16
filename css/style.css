@@ -53,6 +53,9 @@ body {
 /****************************************
 * CSS
 *****************************************/
+body {
+    background-color: #ebebea;
+}
 /* ヘッダー */
 header {
     width: 85%;
@@ -111,6 +114,32 @@ main {
     height: 100%;
     object-fit: cover;
 }
+.menu {
+    width: 85%;
+    margin: 50px auto;
+}
+.menu-title {
+    text-align: center;
+}
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.menu-item {
+    width: 33.333%;
+    height: 150px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+.menu-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
 .feature {
     display: flex;
     margin: 100px 0;
@@ -203,9 +232,16 @@ main {
     transform: translateX(-50%) translateY(-50%);
 }
 table {
-    
+    margin-top: 20px;
+}
+table,td {
+    border: 1px solid #fff;
+    border-collapse: collapse;
 }
 td {
-    width: 70px;
+    width: 150px;
     padding: 10px;
+}
+i {
+    margin-right: 5px;
 }
