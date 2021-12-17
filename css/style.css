@@ -155,7 +155,7 @@ main {
 .feature {
     display: flex;
     margin: 100px 0;
-    padding: 30px 0;
+    padding: 50px 0;
 }
 .feature_title {
     margin-bottom: 20px;
