@@ -55,6 +55,8 @@ body {
 *****************************************/
 body {
     background-color: #ebebea;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 /* ヘッダー */
 header {

@@ -7,11 +7,6 @@ $(function(){
     var bottom_scroll = $('.scroll-point').offset().top;
     var bottom_scroll_height = $('.scroll-point').outerHeight(); 
     var bottom_scroll_position = bottom_scroll + bottom_scroll_height;
-    console.log(img_height);
-    console.log(bottom_scroll);
-    console.log(bottom_scroll_height);
-    console.log(bottom_scroll_position);
-    console.log(bottom_scroll_position - img_height);
     if (window.matchMedia( '(min-width: 768px)' ).matches) {
         $(window).on('scroll',function(){
             var scrollTop = $(window).scrollTop();
@@ -25,7 +20,6 @@ $(function(){
                     'opacity':'1',
                 });
             } else if(scrollTop >= bottom_scroll_position - img_height){
-                console.log(scrollTop);
                 $('.feature_img').css({
                     'position':'absolute',
                     'top':bottom_scroll_position - img_height + 50,
@@ -93,3 +87,44 @@ $(function(){
     }
 
 });
+
+//リサイズされたときの処理
+$(window).resize(function() {
+    // スクロールでfeatureの画像を固定
+    var img_pos = $('.feature_img').offset().top;
+    var img_pos_x = $('.feature_img').offset().left;
+    var img_width = $('.feature_img').outerWidth();
+    var img_height = $('.feature_img').outerHeight();
+    var bottom_scroll = $('.scroll-point').offset().top;
+    var bottom_scroll_height = $('.scroll-point').outerHeight(); 
+    var bottom_scroll_position = bottom_scroll + bottom_scroll_height;
+    if (window.matchMedia( '(min-width: 768px)' ).matches) {
+        $(window).on('scroll',function(){
+            var scrollTop = $(window).scrollTop();
+            if(scrollTop > img_pos - 50 && scrollTop < bottom_scroll_position - img_height) {
+                $('.feature_img').css({
+                    'position':'fixed',
+                    'top':'50px',
+                    'left':img_pos_x,
+                    'width':img_width,
+                    'height':img_height,
+                    'opacity':'1',
+                });
+            } else if(scrollTop >= bottom_scroll_position - img_height){
+                $('.feature_img').css({
+                    'position':'absolute',
+                    'top':bottom_scroll_position - img_height + 50,
+                    'left':img_pos_x,
+                    'width':img_width,
+                    'height':img_height,
+                });
+                
+                
+            }else {
+                $('.feature_img').css({
+                    'position':'static',
+                });
+            }
+        });
+    }
+  });
